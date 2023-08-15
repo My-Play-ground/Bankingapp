@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class BankingApp {
     private static final Scanner SCANNER = new Scanner(System.in);
-
     public static void main(String[] args) {
         final String CLEAR = "\033[H\033[2J";
         final String COLOR_BLUE_BOLD = "\033[34;1m";
@@ -20,3 +19,39 @@ public class BankingApp {
 
         final String ERROR_MSG = String.format("\t%s%s%s\n", COLOR_RED_BOLD, "%s", RESET);
         final String SUCCESS_MSG = String.format("\t%s%s%s\n", COLOR_GREEN_BOLD, "%s", RESET);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
