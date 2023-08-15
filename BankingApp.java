@@ -26,7 +26,11 @@ public class BankingApp {
         String screen = DASHBOARD;
 
         do{
-            
+            final String APP_TITLE = String.format("%s%s%s",
+            COLOR_BLUE_BOLD, screen, RESET);
+
+            System.out.println(CLEAR);
+            System.out.println("\t" + APP_TITLE + "\n");
 
 
 
