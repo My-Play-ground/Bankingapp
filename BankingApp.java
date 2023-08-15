@@ -22,6 +22,7 @@ public class BankingApp {
     
         String[] accountIds = new String[0];
         String[] accountNames = new String[0];
+        
     
         String screen = DASHBOARD;
 
@@ -60,6 +61,7 @@ public class BankingApp {
                     case CREATE_ACCOUNT:
                     String id;
                     String name;
+                    int deposit;
                     boolean valid;
 
                     // ID Validation
@@ -112,16 +114,31 @@ public class BankingApp {
                     }while(!valid);
 
 
+                    do {
+                        System.out.println();
+                        System.out.print("Enter your Deposit Amount Here :");
+                        deposit = SCANNER.nextInt();
+                        SCANNER.nextLine();
 
+                        if (deposit > 5000) {
+                            System.out.println("Initial Deposit :" + deposit);
+                            System.out.println();
+                            System.out.printf(SUCCESS_MSG, 
+                            String.format("%s:%s Account has been Created successfully", id, name));
+                        } else {
 
+                            System.out.printf(ERROR_MSG, "Not Sufficient Amount In Your A/C");
+                        }
+                    } while (!valid);
 
-
+                    System.out.println();
+                    
+                    System.out.print("\tDo you want to continue adding (Y/n)? ");
+                    if (SCANNER.nextLine().strip().toUpperCase().equals("Y")) continue;
+                    screen = DASHBOARD;
+                    break;
 
             }
-    
-    
-    
-    
     
         }while(true);
     }
