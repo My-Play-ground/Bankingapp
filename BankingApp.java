@@ -57,18 +57,54 @@ public class BankingApp {
                         default: continue;
                     }
                     break;
-                    
+                    case CREATE_ACCOUNT:
+                    String id;
+                    String name;
+                    boolean valid;
+
+                    // ID Validation
+                    do {
+                        valid = true;
+                        System.out.print("\tEnter New Customer ID: ");  // SDB-dhvshgc
+                        id = SCANNER.nextLine().toUpperCase().strip();
+                        if (id.isBlank()){
+                            System.out.printf(ERROR_MSG, "ID can't be empty");
+                            valid = false;
+                        }else if (!id.startsWith("SDB-") || id.length() < 5){
+                            System.out.printf(ERROR_MSG, "Invalid ID format");
+                            valid = false;
+                        }else{
+                            String number = id.substring(5);
+                            for (int i = 0; i < number.length(); i++) {
+                                if (!Character.isDigit(number.charAt(i))){
+                                    System.out.printf(ERROR_MSG, "Invalid ID format");
+                                    valid = false;
+                                    break;
+                                }
+                            }
+                            for (int i = 0; i < accountIds.length; i++) {
+                                if (accountIds[i].equals(id)){
+                                    System.out.printf(ERROR_MSG, "Account ID already exists");
+                                    valid = false;
+                                    break;
+                                }
+                            }    
+                        }
+                    }while (!valid);
 
 
 
 
 
+
+
+            }
+    
+    
+    
+    
+    
         }while(true);
-    
-    
-    
-    
-    
     }
 }
 
