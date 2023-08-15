@@ -25,12 +25,39 @@ public class BankingApp {
     
         String screen = DASHBOARD;
 
+        mainLoop:
         do{
             final String APP_TITLE = String.format("%s%s%s",
             COLOR_BLUE_BOLD, screen, RESET);
 
             System.out.println(CLEAR);
             System.out.println("\t" + APP_TITLE + "\n");
+
+            switch(screen){
+                case DASHBOARD: 
+                    System.out.println("\t[1]. Create an Account ");
+                    System.out.println("\t[2]. Deposits ");
+                    System.out.println("\t[3]. Withdrawals ");
+                    System.out.println("\t[4]. Transfer money");
+                    System.out.println("\t[5]. Check Account Balance");
+                    System.out.println("\t[6]. Drop Existing Account");
+                    System.out.println("\t[7]. Exit\n");
+                    System.out.print("\tEnter an option to continue: ");
+                    int option = SCANNER.nextInt();
+                    SCANNER.nextLine();
+
+                    switch (option){
+                        case 1: screen = CREATE_ACCOUNT; break;
+                        case 2: screen = DEPOSIT_MONEY; break;
+                        case 3: screen = CASH_WITHDARWALS; break;
+                        case 4: screen = CASH_WITHDARWALS; break;
+                        case 5: screen = CASH_WITHDARWALS; break;
+                        case 6: screen = REMOVE_ACCOUNT; break;
+                        case 7: System.out.println(CLEAR); System.exit(0);
+                        default: continue;
+                    }
+                    break;
+                    
 
 
 
